@@ -13,8 +13,8 @@ pub fn greet(name: &str) {
 }
 
 #[derive(Debug, PartialEq)]
-#[wasm_bindgen]
 #[derive(Serialize, Deserialize)]
+#[wasm_bindgen]
 pub struct BinaryMeta {
     size: usize,
     sum_bytes: u32,
@@ -54,7 +54,7 @@ pub fn check_binary(data: &[u8]) -> Option<BinaryMeta> {
 
 mod test {
     use super::*;
-    
+
     #[test]
     fn test_sum_not_none() {
         assert_ne!(check_binary(&vec![1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]), None);
