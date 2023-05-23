@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta charset="utf-8" />
+  <title>hello-wasm example</title>
+</head>
+
+<body>
+  <script type="module">
+    import init, { greet, check_binary, BinaryMeta } from "./pkg/hello_wasm.js";
+    init().then(() => {
+      greet("WebAssembly");
+      let result = check_binary([1, 2, 3, 4, 5, 7, 8, 9, 9,9, 9]);
+
+      if (result != null) {
+        console.log(result.get_json());
+      }
+      else {
+        console.log(result);
+      }
+
+    });
+  </script>
+</body>
+
+</html>
